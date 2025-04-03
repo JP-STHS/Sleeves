@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://0bd7xx2mu2tx"]
+
+[ext_resource type="Script" path="res://Level_select/level_select.gd" id="1_40fnp"]
+
+[sub_resource type="Shader" id="Shader_10t8k"]
+code = "shader_type canvas_item;
+
+uniform float rotation : hint_range(0.0, 6.28319); // Rotation in radians
+
+void fragment() {
+    vec2 uv = UV;
+    vec2 center = vec2(0.5, 0.5); // Center of rotation
+    uv -= center;
+    float cos_r = cos(rotation);
+    float sin_r = sin(rotation);
+    uv = vec2(
+        uv.x * cos_r - uv.y * sin_r,
+        uv.x * sin_r + uv.y * cos_r
+    );
+    uv += center;
+    COLOR = texture(TEXTURE, uv);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hnau2"]
+shader = SubResource("Shader_10t8k")
+shader_parameter/rotation = 0.0
+
+[sub_resource type="Gradient" id="Gradient_wchrj"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 0.553859, 0.941653, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_w5pn7"]
+gradient = SubResource("Gradient_wchrj")
+width = 69
+fill_from = Vector2(0.137615, 0.905032)
+fill_to = Vector2(1, 0.0296732)
+
+[node name="Level_select" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_hnau2")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.966
+offset_top = -5.0
+offset_right = 2.0
+offset_bottom = 38.032
+texture = SubResource("GradientTexture2D_w5pn7")
+
+[node name="ToLevel1" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 60.0
+offset_right = 187.0
+offset_bottom = 167.0
+text = "Level 1"
+
+[node name="Level_select" type="Node" parent="."]
+script = ExtResource("1_40fnp")
+
+[connection signal="pressed" from="TextureRect/ToLevel1" to="Level_select" method="_on_to_level_1_pressed"]

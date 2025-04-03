@@ -1,0 +1,226 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3ri5rujlxpj6"]
+
+[ext_resource type="Texture2D" uid="uid://tasoqpr5tbbx" path="res://Assets/Home Menu background.png" id="1_pss6a"]
+[ext_resource type="Texture2D" uid="uid://cu2c548ubac6e" path="res://Assets/Sleeves_logo_image.png" id="2_int7c"]
+[ext_resource type="Script" path="res://Scripts/Menu/sleeve_logo_script.gd" id="3_6vpvv"]
+[ext_resource type="Texture2D" uid="uid://b7og33ik1li4" path="res://Textures/star_pixil-frame-0.png" id="4_bonl2"]
+[ext_resource type="Script" path="res://star_pixil_frame_0.gd" id="5_6gjqi"]
+[ext_resource type="Script" path="res://Scripts/Menu/scene_loader.gd" id="6_2c4w7"]
+
+[node name="Main_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_pss6a")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 120
+
+[node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="SleevesLogoImage" type="Sprite2D" parent="MarginContainer/VBoxContainer" node_paths=PackedStringArray("timer")]
+top_level = true
+visibility_layer = 8
+position = Vector2(549, 310)
+scale = Vector2(0.0670813, 0.0646281)
+texture = ExtResource("2_int7c")
+script = ExtResource("3_6vpvv")
+scale_factor = 0.1
+timer = NodePath("Grow")
+
+[node name="Grow" type="Timer" parent="MarginContainer/VBoxContainer/SleevesLogoImage"]
+
+[node name="StarPixil-frame-0" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+position = Vector2(93.875, 321.5)
+scale = Vector2(0.035825, 0.0345)
+texture = ExtResource("4_bonl2")
+script = ExtResource("5_6gjqi")
+
+[node name="StarPixil-frame-1" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+position = Vector2(255, 320)
+scale = Vector2(0.035825, 0.0345)
+texture = ExtResource("4_bonl2")
+script = ExtResource("5_6gjqi")
+
+[node name="StarPixil-frame-3" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+visibility_layer = 8
+position = Vector2(328, 376)
+scale = Vector2(0.035825, 0.0345)
+texture = ExtResource("4_bonl2")
+script = ExtResource("5_6gjqi")
+
+[node name="StarPixil-frame-8" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+position = Vector2(575, 93)
+scale = Vector2(0.035825, 0.0345)
+texture = ExtResource("4_bonl2")
+script = ExtResource("5_6gjqi")
+
+[node name="StarPixil-frame-15" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+position = Vector2(849, 468)
+scale = Vector2(0.035825, 0.0345)
+texture = ExtResource("4_bonl2")
+script = ExtResource("5_6gjqi")
+
+[node name="StarPixil-frame-16" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+position = Vector2(801, 280)
+scale = Vector2(0.035825, 0.0345)
+texture = ExtResource("4_bonl2")
+script = ExtResource("5_6gjqi")
+
+[node name="StarPixil-frame-17" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+position = Vector2(901, 139)
+scale = Vector2(0.035825, 0.0345)
+texture = ExtResource("4_bonl2")
+script = ExtResource("5_6gjqi")
+
+[node name="StarPixil-frame-19" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+position = Vector2(975, 309)
+scale = Vector2(0.035825, 0.0345)
+texture = ExtResource("4_bonl2")
+script = ExtResource("5_6gjqi")
+
+[node name="StarPixil-frame-20" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+position = Vector2(1040, 190)
+scale = Vector2(0.035825, 0.0345)
+texture = ExtResource("4_bonl2")
+script = ExtResource("5_6gjqi")
+
+[node name="StarPixil-frame-21" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+position = Vector2(1092, 379)
+scale = Vector2(0.035825, 0.0345)
+texture = ExtResource("4_bonl2")
+script = ExtResource("5_6gjqi")
+
+[node name="StarPixil-frame-22" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+position = Vector2(972, 427)
+scale = Vector2(0.035825, 0.0345)
+texture = ExtResource("4_bonl2")
+script = ExtResource("5_6gjqi")
+
+[node name="StarPixil-frame-18" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+position = Vector2(1019, 88)
+scale = Vector2(0.035825, 0.0345)
+texture = ExtResource("4_bonl2")
+script = ExtResource("5_6gjqi")
+
+[node name="StarPixil-frame-4" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+position = Vector2(137, 446)
+scale = Vector2(0.035825, 0.0345)
+texture = ExtResource("4_bonl2")
+script = ExtResource("5_6gjqi")
+
+[node name="StarPixil-frame-5" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+position = Vector2(424, 256)
+scale = Vector2(0.035825, 0.0345)
+texture = ExtResource("4_bonl2")
+script = ExtResource("5_6gjqi")
+
+[node name="StarPixil-frame-6" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+position = Vector2(325, 91)
+scale = Vector2(0.035825, 0.0345)
+texture = ExtResource("4_bonl2")
+script = ExtResource("5_6gjqi")
+
+[node name="StarPixil-frame-9" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+position = Vector2(656, 206)
+scale = Vector2(0.035825, 0.0345)
+texture = ExtResource("4_bonl2")
+script = ExtResource("5_6gjqi")
+
+[node name="StarPixil-frame-14" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+position = Vector2(753, 119)
+scale = Vector2(0.035825, 0.0345)
+texture = ExtResource("4_bonl2")
+script = ExtResource("5_6gjqi")
+
+[node name="StarPixil-frame-10" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+position = Vector2(137, 446)
+scale = Vector2(0.035825, 0.0345)
+texture = ExtResource("4_bonl2")
+script = ExtResource("5_6gjqi")
+
+[node name="StarPixil-frame-11" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+position = Vector2(576, 277)
+scale = Vector2(0.035825, 0.0345)
+texture = ExtResource("4_bonl2")
+script = ExtResource("5_6gjqi")
+
+[node name="StarPixil-frame-13" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+position = Vector2(671, 341)
+scale = Vector2(0.035825, 0.0345)
+texture = ExtResource("4_bonl2")
+script = ExtResource("5_6gjqi")
+
+[node name="StarPixil-frame-12" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+position = Vector2(325, 91)
+scale = Vector2(0.035825, 0.0345)
+texture = ExtResource("4_bonl2")
+script = ExtResource("5_6gjqi")
+
+[node name="StarPixil-frame-7" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+position = Vector2(438, 155)
+scale = Vector2(0.035825, 0.0345)
+texture = ExtResource("4_bonl2")
+script = ExtResource("5_6gjqi")
+
+[node name="StarPixil-frame-2" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+position = Vector2(71, 150)
+scale = Vector2(0.035825, 0.0345)
+texture = ExtResource("4_bonl2")
+script = ExtResource("5_6gjqi")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="MarginContainer"]
+
+[node name="Start_button" type="Button" parent="MarginContainer/CanvasLayer"]
+offset_left = 1014.0
+offset_top = 187.0
+offset_right = 1131.0
+offset_bottom = 244.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Play!"
+
+[node name="Settings_button" type="Button" parent="MarginContainer/CanvasLayer"]
+offset_left = 1014.0
+offset_top = 259.0
+offset_right = 1131.0
+offset_bottom = 316.0
+text = "Settings"
+
+[node name="Settings_button2" type="Button" parent="MarginContainer/CanvasLayer"]
+offset_left = 1013.0
+offset_top = 331.0
+offset_right = 1130.0
+offset_bottom = 388.0
+text = "Credits"
+
+[node name="Scene_Loader" type="Node" parent="."]
+script = ExtResource("6_2c4w7")
+
+[connection signal="timeout" from="MarginContainer/VBoxContainer/SleevesLogoImage/Grow" to="MarginContainer/VBoxContainer/SleevesLogoImage" method="_on_grow_timeout"]
+[connection signal="pressed" from="MarginContainer/CanvasLayer/Start_button" to="Scene_Loader" method="_on_start_button_pressed"]

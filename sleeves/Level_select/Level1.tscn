@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://edmghed2s8bx"]
+
+[ext_resource type="PackedScene" uid="uid://cx46kq0brmnm2" path="res://Scenes/Player/player.tscn" id="1_wpimj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4gf03"]
+size = Vector2(1073.5, 136)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_wpimj")]
+position = Vector2(254, 123)
+
+[node name="InvisibleFloor" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleFloor"]
+position = Vector2(575.25, 285)
+shape = SubResource("RectangleShape2D_4gf03")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
